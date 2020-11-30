@@ -14,12 +14,14 @@ public class ShootDemo : MonoBehaviour
     float timerShoot = 0f;
     public ParticleSystem muzzleFlash;
     bool isMoving;
+    private Animator ch_animator;
     //public EnemyScript enemy;
 
     // Update is called once per frame
     void Start()
     {
         mAudio = GetComponent<AudioSource>();
+        //ch_animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -38,6 +40,7 @@ public class ShootDemo : MonoBehaviour
                 timerShoot = TimeShoot;
                 mAudio.Play();
                 muzzleFlash.Play();
+                
                 Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
                 instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
 

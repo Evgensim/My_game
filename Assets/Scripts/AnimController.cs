@@ -24,6 +24,7 @@ public class AnimController : MonoBehaviour
         if (vertical == 0)
         {
             animator.SetBool("Run", false);
+            
         }
 
         if (vertical >= 0.1f)

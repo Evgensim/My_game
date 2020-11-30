@@ -33,11 +33,11 @@ public class CharacterMehanics : MonoBehaviour
         moveVector.x = mCont.Horizontal() * speedMove;
         moveVector.z = mCont.Vertical() * speedMove;
 
-        // if (moveVector.x!=0||moveVector.z!=0) ch_animator.SetBool("Run",true);
-        // else ch_animator.SetBool("Run",false);
-
         if (moveVector.x!=0||moveVector.z!=0) ch_animator.SetBool("Run",true);
         else ch_animator.SetBool("Run",false);
+
+        // if (moveVector.x!=0||moveVector.z!=0) ch_animator.SetBool("Run",true);
+        // else ch_animator.SetBool("Run",false);
         
             
         if (Vector3.Angle(Vector3.forward, moveVector) > 1f || Vector3.Angle(Vector3.forward, moveVector) == 0)

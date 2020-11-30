@@ -25,7 +25,7 @@ public class Gun : MonoBehaviour
     {
         // if (Input.GetButtonDown("Fire1"))
         // {
-        //     Shoot();
+        
         // } else
         // {
         //     //animator.SetBool("Fire", false);
@@ -38,7 +38,13 @@ public class Gun : MonoBehaviour
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
-            //animator.SetBool("Fire", true);
+            animator.SetBool("Fire", true);
         }
+    }
+
+    public void NotShoot()
+    {
+         animator.SetBool("Fire", false);
+         animator.SetBool("Run", true);
     }
 }
