@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
 
     public float damage = 10f;
     public float range = 100f;
+    public bool isShoot;
 
     public Camera fpsCam;
 
@@ -38,13 +39,31 @@ public class Gun : MonoBehaviour
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
-            animator.SetBool("Fire", true);
+           // animator.SetBool("Fire", true);
+            //animator.SetBool("RunFire", false);
+            
         }
     }
 
     public void NotShoot()
     {
          animator.SetBool("Fire", false);
-         animator.SetBool("Run", true);
+         animator.SetBool("RunFire", false);
+    }
+
+    public void Run(){
+        animator.SetBool("Fire", true);
+    }
+
+    public void jouRun()
+    {
+        animator.SetBool("RunFire", true);
+        animator.SetBool("Fire", false);
+    }
+
+    public void jouNotRun()
+    {
+        animator.SetBool("RunFire", false);
+        animator.SetBool("Fire", false);
     }
 }

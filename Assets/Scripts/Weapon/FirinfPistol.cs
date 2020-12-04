@@ -12,7 +12,7 @@ public class FirinfPistol : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             isAiming = true;
-            thePlayer.GetComponent<Animation>().Play("Fire");
+            thePlayer.GetComponent<Animation>().Play("RunFire");
         }
         else
         {
